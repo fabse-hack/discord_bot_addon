@@ -3,7 +3,7 @@ import os
 
 # Kompatibel für Home Assistant (klein) und Docker (groß)
 TOKEN = os.environ.get("TOKEN") or os.environ.get("token")
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID") or os.environ.get("channel_id"))
+CHANNEL_ID = os.environ.get("CHANNEL_ID") or os.environ.get("channel_id")
 
 class MyClient(discord.Client):
     async def on_ready(self):
