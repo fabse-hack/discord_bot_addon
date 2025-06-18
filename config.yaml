@@ -1,11 +1,11 @@
-name: "Heeeello world"
-description: "My first real add-on!!!!!!!"
-version: "2.0.0"
-slug: "heleeelo_world"
-init: false
+name: "Discord Bot Addon"
+version: "1.0.0"
+slug: "discord_bot_addon"
+description: "Ein einfaches Home Assistant Add-on für einen Discord Bot."
+startup: services
+boot: auto
+options: {}
+schema: {}
 arch:
-  - aarch64
   - amd64
-  - armhf
-  - armv7
-  - i386
+  - aarch64
