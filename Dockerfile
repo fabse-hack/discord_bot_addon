@@ -1,6 +1,7 @@
 FROM alpine:3.18
 
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
+RUN apk add --no-cache python3
 
-CMD [ "/run.sh" ]
+COPY run.py /run.py
+
+CMD ["python3", "/run.py"]
