@@ -5,11 +5,11 @@ description: "Ein einfaches Home Assistant Add-on für einen Discord Bot."
 startup: services
 boot: auto
 options:
-  token: ""
-  channel_id: ""
+  TOKEN: ""
+  CHANNEL_ID: ""
 schema:
-  token: str
-  channel_id: str
+  TOKEN: str
+  CHANNEL_ID: str
 arch:
   - amd64
   - aarch64
