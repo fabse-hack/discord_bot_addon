@@ -5,6 +5,14 @@ import os
 TOKEN = os.environ.get("TOKEN") or os.environ.get("token")
 CHANNEL_ID = os.environ.get("CHANNEL_ID") or os.environ.get("channel_id")
 
+if not TOKEN:
+    raise ValueError("Discord TOKEN ist nicht gesetzt! Bitte in der Add-on-Konfiguration eintragen.")
+if not CHANNEL_ID:
+    raise ValueError("Discord CHANNEL_ID ist nicht gesetzt! Bitte in der Add-on-Konfiguration eintragen.")
+CHANNEL_ID = int(CHANNEL_ID)
+
+print("Alle Umgebungsvariablen:", dict(os.environ))
+
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Bot ist eingeloggt als {self.user}')
