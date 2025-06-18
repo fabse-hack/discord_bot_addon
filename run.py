@@ -1,14 +1,19 @@
-import time
+import discord
+import os
 
-print("Starte Discord Bot Addon Script...")
-while True:
-    try:
-        print("hello world")
-        time.sleep(2)
-        print("test")
-        time.sleep(1)
-        print("Fertig geschlafen!")
-        time.sleep(2)
-    except Exception as e:
-        print(f"Fehler im Hauptloop: {e}")
-        time.sleep(5)
+TOKEN = os.environ["TOKEN"]
+CHANNEL_ID = int(os.environ["CHANNEL_ID"])
+
+class MyClient(discord.Client):
+    async def on_ready(self):
+        print(f'Bot ist eingeloggt als {self.user}')
+        channel = self.get_channel(CHANNEL_ID)
+        if channel:
+            await channel.send('Hello, World!')
+        else:
+            print(f"Kanal mit ID {CHANNEL_ID} nicht gefunden.")
+        await self.close()
+
+intents = discord.Intents.default()
+client = MyClient(intents=intents)
+client.run(TOKEN)

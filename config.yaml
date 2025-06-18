@@ -4,8 +4,12 @@ slug: "discord_bot_addon"
 description: "Ein einfaches Home Assistant Add-on für einen Discord Bot."
 startup: services
 boot: auto
-options: {}
-schema: {}
+options:
+  token: ""
+  channel_id: ""
+schema:
+  token: str
+  channel_id: str
 arch:
   - amd64
   - aarch64
