@@ -1,5 +1,10 @@
 import time
 
-while True:
-    print("hello world")
+print("hello world")
+
+try:
+    print("test")
     time.sleep(5)
+    print("Fertig geschlafen!")
+except Exception as e:
+    print(f"Fehler: {e}")
